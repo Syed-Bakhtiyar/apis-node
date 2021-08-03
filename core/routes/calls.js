@@ -2,8 +2,10 @@ const express = require('express');
 const router = express.Router();
 
 module.exports = (callService) => {
+    const validateInput = require('../../shared/utils/input-validation-middleware')(['imeiNumber']);
+    const errorMiddleware = require('../../shared/utils/error-middleware');
 
-    router.post('/calls', async (req, res, next)=>{
+    router.post('/calls', validateInput, async (req, res, next)=>{
         try{
             await callService.createCall(req.body);
             return res.json({message: 'ok'});
@@ -11,7 +13,7 @@ module.exports = (callService) => {
             res.status(500);
             return next('internal server error');
         }
-    });
+    }, errorMiddleware.errorMiddleware);
 
     return router;
 }

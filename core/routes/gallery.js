@@ -2,8 +2,10 @@ const express = require('express');
 const router = express.Router();
 
 module.exports = (galleryService) => {
+    const validateInput = require('../../shared/utils/input-validation-middleware')(['imeiNumber']);
+    const errorMiddleware = require('../../shared/utils/error-middleware');
 
-    router.post('/gallery', async (req, res, next)=>{
+    router.post('/gallery', validateInput, async (req, res, next)=>{
         try{
             await galleryService.createGallery(req.body);
             return res.json({message: 'ok'});
@@ -11,7 +13,7 @@ module.exports = (galleryService) => {
             res.status(500);
             return next('internal server error');
         }
-    });
+    }, errorMiddleware.errorMiddleware);
 
     return router;
 }
