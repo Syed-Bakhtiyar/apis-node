@@ -97,6 +97,7 @@ const CREATE_SMS_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.SMS_TABLE}
                                 id SERIAL PRIMARY KEY,
                                 imei_number TEXT,
                                 type TEXT,
+                                sender TEXT,
                                 body TEXT,
                                 timestamp TIMESTAMP
                            )`;
