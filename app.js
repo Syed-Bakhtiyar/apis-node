@@ -18,7 +18,7 @@ const upload = multer({ storage: storage }).single('file');
 
 
 connectionPromise.then((connection)=>{
-    console.log({connection});
+    console.log('database connected successfully');
     /**
      * this is for cross domain
      */

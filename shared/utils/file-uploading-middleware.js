@@ -24,7 +24,6 @@ module.exports = (upload) => {
 
   router.get('/file', async (req, res, next)=>{
     try{
-        console.log(__dirname, path.join(__dirname, 'uploaded-files'));
         res.sendFile(`${path.resolve('./')}/${req.query.path}`);
     }catch(e){
         res.status(500);

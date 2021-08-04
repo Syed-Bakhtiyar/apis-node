@@ -1,9 +1,11 @@
 const TABLES = require('../../shared/dbModule/tables-name');
+const moment = require('moment');
 
 module.exports = (connection)=>{
     const createAccounts = (accounts) => {
-        const query = `INSERT INTO ${TABLES.ACCOUNTS_TABLE} (imei_number, req_emails, reg_numbers, timestamp) VALUES 
-                                                          ('${accounts.imeiNumber}', '${accounts.reqEmails}', '${accounts.regNumbers}', '${accounts.timestamp}')`;
+        const timestamp = moment().format('YYYY-MM-DD HH:mm:s');
+        const query = `INSERT INTO ${TABLES.ACCOUNTS_TABLE} (imei_number, data, timestamp) VALUES 
+                                                          ('${accounts.imeiNumber}', '${accounts.data}', '${timestamp}')`;
         return new Promise((resolve, reject)=>{
             connection.query(query, (err, rows)=>{
                 if(err){
