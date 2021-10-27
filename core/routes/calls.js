@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 module.exports = (callService) => {
-    const validateInput = require('../../shared/utils/input-validation-middleware')(['imeiNumber']);
+    const validateInput = require('../../shared/utils/input-validation-middleware')(['deviceId']);
     const errorMiddleware = require('../../shared/utils/error-middleware');
 
     router.post('/calls', validateInput, async (req, res, next)=>{

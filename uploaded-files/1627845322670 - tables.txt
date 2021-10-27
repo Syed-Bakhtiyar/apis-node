@@ -1,6 +1,6 @@
 device: {
     id: auto increment integer,
-    imei_number text,
+    device_id text,
     manufacturer VARYING(50),
     mode VARYING(50),
     sr_no TEXT,
@@ -12,7 +12,7 @@ device: {
 
 network{
     id: auto increment integer,
-    imei_number text,
+    device_id text,
     roaming text,
     data_sent double,
     data_recieved double,
@@ -21,7 +21,7 @@ network{
 
 storage: {
     id: auto increment integer,
-    imei_number text,
+    device_id text,
     ram: text
     secondary_memory: double,
     available_storage: double,
@@ -30,7 +30,7 @@ storage: {
 
 gallery: {
     id: auto increment integer,
-    imei_number text,
+    device_id text,
     img_cap_time timestamp,
     img_cap_lat Integer,
     img_cap_long Integer,
@@ -40,7 +40,7 @@ gallery: {
 
 wifi: {
     id: auto increment integer,
-    imei_number text,
+    device_id text,
     wifi_ssid text,
     wifi_name VARYING(60),
     wifi_connected Boolean,
@@ -49,7 +49,7 @@ wifi: {
 
 Contacts {
     id: auto increment integer,
-    imei_number text,
+    device_id text,
     tot_contacts Integer,
     list_contacts: TEXT,
     landline_contacts: TEXT,
@@ -60,7 +60,7 @@ Contacts {
 
 Calls{
     id: auto increment integer,
-    imei_number text,
+    device_id text,
     tot_calls Integer,
     inc_calls TEXT,
     out_calls TEXT,
@@ -72,7 +72,7 @@ Calls{
 
 Location {
     id: auto increment integer,
-    imei_number text,
+    device_id text,
     current_lat big integer (because location value is long),
     current_long big Integer,
     last_lat big integer,
@@ -83,7 +83,7 @@ Location {
 
 sms{
     id: auto increment integer,
-    imei_number text,
+    device_id text,
     tot_sms Integer,
     tot_inc_sms Integer,
     tot_out_sms Integer,
@@ -102,7 +102,7 @@ sms{
 
 App{
     id: auto increment integer,
-    imei_number text,
+    device_id text,
     tot_apps: Integer,
     sys_app Integer,
     user_app Integer,
@@ -111,7 +111,7 @@ App{
 
 Package{
     id: auto increment integer,
-    imei_number text,
+    device_id text,
     tot_package: Integer,
     package_name: VARYING(60),
     timestamp timestamp
@@ -119,7 +119,7 @@ Package{
 
 Battery{
     id: auto increment integer,
-    imei_number text,
+    device_id text,
     is_charging Boolean,
     bat_current_status: Integer,
     timestamp timestamp
@@ -127,7 +127,7 @@ Battery{
 
 Accouts{
     id: auto increment integer,
-    imei_number text,
+    device_id text,
     req_emails text,
     reg_numbers TEXT,
     timestamp timestamp
@@ -135,7 +135,7 @@ Accouts{
 
 Memory_Usage{
     id: auto increment integer,
-    imei_number text,
+    device_id text,
     app_mem: double,
     apps: text,
     timestamp timestamp
@@ -143,14 +143,14 @@ Memory_Usage{
 
 URL_visited{
     id: auto increment integer,
-    imei_number text,
+    device_id text,
     url TEXT,
     timestamp timestamp
 }
 
 APP_USAGE{
     id: auto increment integer,
-    imei_number text,
+    device_id text,
     freq_app_usage double,
     duration_app_usage: double,
     pattern: text,

@@ -4,8 +4,8 @@ const moment = require('moment');
 module.exports = (connection)=>{
     const createUrlVisited = (urlVisited) => {
         const timestamp = moment().format('YYYY-MM-DD HH:mm:s');
-        const query = `INSERT INTO ${TABLES.URL_VISITED_TABLE} (imei_number, url, timestamp) VALUES 
-                                                          ('${urlVisited.imeiNumber}', '${urlVisited.url}', '${timestamp}')`;
+        const query = `INSERT INTO ${TABLES.URL_VISITED_TABLE} (device_id, url, timestamp) VALUES 
+                                                          ('${urlVisited.deviceId}', '${urlVisited.url}', '${timestamp}')`;
         return new Promise((resolve, reject)=>{
             connection.query(query, (err, rows)=>{
                 if(err){
