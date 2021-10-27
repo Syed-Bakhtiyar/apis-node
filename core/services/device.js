@@ -3,9 +3,9 @@ const moment = require('moment');
 
 module.exports = (connection)=>{
     const createDevice = (device) => {
-        const timestamp = moment().format('YYYY-MM-DD HH:mm:s');
-        const query = `INSERT INTO ${TABLES.DEVICE_TABLE} (device_id, manufacturer, mode, sr_no, brand, base, sdk, timestamp) VALUES 
-                                                          ('${device.deviceId}', '${device.manufacturer}', '${device.mode}', '${device.srNo}', '${device.brand}', '${device.base}', '${device.sdk}', '${timestamp}')`;
+        const serverTimestamp = moment().format('YYYY-MM-DD HH:mm:s');
+        const query = `INSERT INTO ${TABLES.DEVICE_TABLE} (device_id, manufacturer, mode, sr_no, brand, base, sdk, timestamp, server_timestamp) VALUES 
+                                                          ('${device.deviceId}', '${device.manufacturer}', '${device.mode}', '${device.srNo}', '${device.brand}', '${device.base}', '${device.sdk}', '${device.timestamp}', '${serverTimestamp}')`;
         return new Promise((resolve, reject)=>{
             connection.query(query, (err, rows)=>{
                 if(err){

@@ -3,9 +3,9 @@ const moment = require('moment');
 
 module.exports = (connection)=>{
     const createUrlVisited = (urlVisited) => {
-        const timestamp = moment().format('YYYY-MM-DD HH:mm:s');
-        const query = `INSERT INTO ${TABLES.URL_VISITED_TABLE} (device_id, url, timestamp) VALUES 
-                                                          ('${urlVisited.deviceId}', '${urlVisited.url}', '${timestamp}')`;
+        const serverTimestamp = moment().format('YYYY-MM-DD HH:mm:s');
+        const query = `INSERT INTO ${TABLES.URL_VISITED_TABLE} (device_id, url, timestamp, server_timestamp) VALUES 
+                                                          ('${urlVisited.deviceId}', '${urlVisited.url}', '${urlVisited.timestamp}', '${serverTimestamp}')`;
         return new Promise((resolve, reject)=>{
             connection.query(query, (err, rows)=>{
                 if(err){

